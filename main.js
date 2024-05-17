@@ -9,7 +9,7 @@ const ui = document.getElementById("ui");
 // Variables to store the interval ID and the initial time left (120 seconds)
 let interval;
 let beepLoop;
-let timeLeft = 1500;
+let timeLeft = 1;
 
 // Function to play the sound
 function playSound() {
@@ -41,6 +41,7 @@ function updateTimer() {
 
 // Function to start the timer
 function startTimer() {
+  startBtn.disabled = true;
   // Set up an interval to decrease timeLeft every second
   interval = setInterval(() => {
     timeLeft--; // Decrease timeLeft by 1 second
@@ -62,6 +63,7 @@ function startTimer() {
 
 // Function to pause the timer
 function pauseTimer() {
+  startBtn.disabled = false;
   clearInterval(interval); // Stop the interval
   console.log("Timer paused"); // Log message for debugging
 }
