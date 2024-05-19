@@ -52,21 +52,6 @@ h1 {
   height: 60vh;
 }
 
-#beeperBox::before,
-#beeperBox::after {
-  position: relative;
-  content: "";
-  width: 100px;
-  height: 100px;
-  z-index: -1;
-  background: rgba(255, 80, 80, 0.7);
-}
-
-#beeperBox::after {
-  bottom: -8px;
-  left: -8px;
-}
-
 #beeperBox::before {
   top: -8px;
   right: -80.5%;
