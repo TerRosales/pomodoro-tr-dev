@@ -163,3 +163,17 @@ button {
   margin: 2rem auto;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  #title {
+    font-size: 3.2rem;
+  }
+  #buttons {
+    align-items: center;
+    flex-direction: column;
+  }
+  #counter {
+    width: 100%;
+    font-size: 3.2rem;
+  }
+}
