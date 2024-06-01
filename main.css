@@ -1,15 +1,24 @@
+:root {
+  --marginSmall: 0.5rem;
+  --marginLarge: 1rem;
+  --paddingSmall: 0.5rem;
+  --paddingLarge: 1rem;
+  --color60: whitesmoke;
+  --color30: #555;
+  --color10: rgba(10, 10, 255, 0.6);
+  --colorAlert: rgba(255, 80, 80, 0.7);
+}
+
 *,
 *::before,
 *::after {
+  font-family: "IBM Plex Mono", monospace;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-h1 {
-  font-size: 4rem;
-  margin: 20px;
-}
+/* Alert Key Frame and Anim. */
 
 .ringing {
   transition: all;
@@ -31,53 +40,112 @@ h1 {
   }
 }
 
-#main {
+/* Alert Key Frame and Anim. */
+
+main {
   display: flex;
-  flex-direction: ;
-  margin: 5%;
-  text-align: center;
   justify-content: center;
-  padding: 0;
-  border: 2px solid #202020;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--color60);
+  color: var(--color30);
 }
 
 #beeperBox {
-  background: rgba(240, 240, 240);
-  border: 1px solid #202020;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 35px 0px;
-  width: 60%;
-  height: 60vh;
 }
 
-#beeperBox::before {
-  top: -8px;
-  right: -80.5%;
+#title {
+  font-size: 40px;
+  margin: 2rem 0;
 }
 
+/* Buttons */
 #buttons {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 10%;
-  margin: 10px;
 }
 
-button {
-  margin: 10px 15px;
-  border-radius: 10%;
-  width: 80px;
-  height: 40px;
+#buttons button {
+  font-size: 20px;
+  margin: var(--marginSmall);
+  padding: var(--paddingSmall);
+
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.1s;
+  border-left: 2px solid rgba(240, 240, 240, 0.5);
+  border-bottom: 3px solid rgba(240, 240, 240, 0.7);
 }
+
+#start {
+  background: var(--color10);
+}
+
+#start:hover {
+  background: linear-gradient(rgba(10, 10, 255, 0.8), rgba(20, 20, 250, 0.4));
+  transform: scale(1.05) translateY(-0.6rem);
+  box-shadow: 1px 2px 6px rgba(10, 10, 255, 0.3);
+  color: snow;
+  text-shadow: 1px 1px 3px #222;
+}
+
+#start:active {
+  background: linear-gradient(rgba(0, 0, 255, 0.8), rgba(20, 20, 255, 0.6));
+  transform: scale(1.02) translateY(-0.5rem);
+}
+
+#pause {
+  color: rgba(50, 0, 0, 1) !important;
+  background: rgba(255, 191, 120, 1);
+}
+
+#pause:hover {
+  background: linear-gradient(rgba(255, 191, 120, 1), rgba(255, 150, 120, 1));
+  transform: scale(1.05) translateY(-0.6rem);
+  box-shadow: 1px 2px 6px rgba(255, 201, 131, 1);
+  color: snow;
+  color: rgba(80, 0, 0, 1) !important;
+  text-shadow: 1px 1px 3px white;
+}
+
+#pause:active {
+  background: linear-gradient(rgba(255, 191, 110, 1), rgba(255, 150, 100, 1));
+  transform: scale(1.02) translateY(-0.5rem);
+  color: white;
+}
+
+#reset {
+  background: rgba(210, 10, 50, 0.8);
+}
+
+#reset:hover {
+  background: linear-gradient(rgba(230, 10, 50, 0.8), rgba(220, 20, 150, 0.6));
+  transform: scale(1.05) translateY(-0.6rem);
+  box-shadow: 1px 2px 6px rgba(10, 10, 255, 0.3);
+  color: snow;
+  text-shadow: 1px 1px 3px #222;
+}
+
+#reset:active {
+  background: linear-gradient(rgba(237, 10, 50, 0.8), rgba(235, 10, 50, 0.8));
+  transform: scale(1.02) translateY(-0.5rem);
+}
+
+/* Timer */
 
 #counter {
-  background: whitesmoke;
-  border: 2px solid #202020;
-  color: #222;
-  font-weight: bolder;
-  font-size: 4rem;
-  margin: 10%;
-  padding: 10px;
+  margin: var(--marginLarge);
+  padding: var(--paddingLarge);
+  background: var(--color10);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0;
 }

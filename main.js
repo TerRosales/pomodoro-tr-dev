@@ -5,6 +5,7 @@ const resetBtn = document.getElementById("reset");
 const timer = document.getElementById("timer");
 const beeper = document.getElementById("beeper");
 const ui = document.getElementById("ui");
+const timerContainer = document.getElementById("counter");
 
 // Variables to store the interval ID and the initial time left (120 seconds)
 let interval;
@@ -42,6 +43,7 @@ function updateTimer() {
 // Function to start the timer
 function startTimer() {
   startBtn.disabled = true;
+  updateTimer();
   // Set up an interval to decrease timeLeft every second
   interval = setInterval(() => {
     timeLeft--; // Decrease timeLeft by 1 second
@@ -50,8 +52,8 @@ function startTimer() {
 
     // Check if the time has run out
     if (timeLeft === 0) {
-      resetBtn.classList.add("ringing");
-      resetBtn.style.backgroundColor = "rgba(255, 80, 80, 0.8)";
+      timerContainer.classList.add("ringing");
+      timerContainer.style.backgroundColor = "rgba(255, 80, 80, 0.8)";
       playSound();
       clearInterval(interval); // Stop the timer
       timeLeft = 1500; // Reset timeLeft to 1500 seconds (25 minutes)
@@ -70,6 +72,8 @@ function pauseTimer() {
 
 // Function to reset the timer
 function resetTimer() {
+  timerContainer.classList.remove("ringing");
+  timerContainer.style.backgroundColor = "rgba(10, 10, 255, 0.6)";
   stopSound();
   clearInterval(interval); // Stop the interval if running
   startBtn.disabled = false;
