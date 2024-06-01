@@ -19,6 +19,9 @@
 }
 
 /* Alert Key Frame and Anim. */
+h1 {
+  font-size: 4rem;
+}
 
 .ringing {
   transition: all;
@@ -44,22 +47,27 @@
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
   align-items: center;
-  height: 100vh;
   background: var(--color60);
   color: var(--color30);
+  height: 100vh;
 }
 
 #beeperBox {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #title {
   font-size: 40px;
   margin: 2rem 0;
+  justify-content: center;
+  margin: 3% auto;
 }
 
 /* Buttons */
@@ -71,14 +79,20 @@ main {
   font-size: 20px;
   margin: var(--marginSmall);
   padding: var(--paddingSmall);
-
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.1s;
-  border-left: 2px solid rgba(240, 240, 240, 0.5);
-  border-bottom: 3px solid rgba(240, 240, 240, 0.7);
+  border-left: 2px solid rgba(50, 50, 50, 0.4);
+  border-bottom: 3px solid rgba(50, 50, 50, 0.6);
+}
+
+button {
+  margin: 0px auto;
+  border-radius: 10%;
+  width: 92px;
+  height: 42px;
+  border-top: none;
+  border-right: none;
+  color: snow;
 }
 
 #start {
@@ -138,14 +152,14 @@ main {
 /* Timer */
 
 #counter {
-  margin: var(--marginLarge);
+  display: flex;
   padding: var(--paddingLarge);
   background: var(--color10);
   color: white;
-  border: none;
   border-radius: 0.5rem;
   font-size: 2.5rem;
   font-weight: 600;
-  text-align: center;
-  margin: 2rem 0;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
 }
