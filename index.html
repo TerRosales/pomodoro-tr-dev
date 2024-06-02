@@ -18,14 +18,34 @@
       <div id="beeperBox">
         <h1 id="title">Pomodoro</h1>
         <div id="buttons">
-          <button id="start">Start</button>
-          <button id="pause">Pause</button>
-          <button id="reset">Reset</button>
+          <button id="start" class="btn">Start</button>
+          <button id="pause" class="btn">Pause</button>
+          <button id="reset" class="btn">Reset</button>
         </section>
         
       </div>
       <section id="counter">
         <p id="timer">25 : 00</p>
+
+      </section>
+      <section>
+        <button id="openModalBtn" class="btn">Open Modal</button>
+
+        <!-- Modal Structure -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modalBtnGroup">
+                  <h2>Select Time: </h2>
+                  <button class="btn timeSet">20 : 00</button>
+                  <button class="btn timeSet">30 : 00</button>
+                  <button class="btn timeSet">35 : 00</button>
+                  <button class="btn customBtn">Custom</button>
+                  <div id="customBtnContainer">
+                  </div>
+                </div>
+            </div>
+        </div>
       </section>
     </main>
   </body>
